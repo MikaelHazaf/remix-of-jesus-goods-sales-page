@@ -1,17 +1,8 @@
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
 import mockupKit from "@/assets/mockup-kit.png";
 const CHECKOUT_URL = "https://pay.cakto.com.br/jdf8uyq_413393";
 const HeroSection = () => {
-  const [showBadge, setShowBadge] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowBadge(true);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
   return <section className="relative overflow-hidden gradient-warm py-8 sm:py-12 lg:py-20">
       {/* Decorative elements */}
       <div className="absolute top-10 left-10 w-20 h-20 rounded-full bg-secondary/30 blur-2xl hidden sm:block" />
@@ -68,11 +59,9 @@ const HeroSection = () => {
               <img src={mockupKit} alt="Kit Bíblico Jesus Goods - Mockup com todos os materiais" className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
             </div>
             {/* Header de urgência - fixo no topo */}
-            {showBadge && (
-              <div className="fixed top-0 left-0 right-0 z-50 bg-accent text-accent-foreground font-bold text-sm sm:text-base py-2 sm:py-3 text-center shadow-lg animate-fade-in">
-                🔥 ÚLTIMAS 7 VAGAS COM 79% OFF 🔥
-              </div>
-            )}
+            <div className="fixed top-0 left-0 right-0 z-50 bg-accent text-accent-foreground font-bold text-sm sm:text-base py-2 sm:py-3 text-center shadow-lg">
+              🔥 ÚLTIMAS 7 VAGAS COM 79% OFF 🔥
+            </div>
           </div>
         </div>
       </div>
