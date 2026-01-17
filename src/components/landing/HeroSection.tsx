@@ -2,23 +2,9 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
 import mockupKit from "@/assets/mockup-kit.png";
-
 const CHECKOUT_URL = "https://pay.cakto.com.br/jdf8uyq_413393";
-const COUNTDOWN_HOURS = 2; // Tempo inicial do contador em horas
-
 const HeroSection = () => {
   const [showBadge, setShowBadge] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(() => {
-    const saved = localStorage.getItem('countdown-end');
-    if (saved) {
-      const endTime = parseInt(saved, 10);
-      const remaining = Math.max(0, endTime - Date.now());
-      return remaining;
-    }
-    const endTime = Date.now() + COUNTDOWN_HOURS * 60 * 60 * 1000;
-    localStorage.setItem('countdown-end', endTime.toString());
-    return COUNTDOWN_HOURS * 60 * 60 * 1000;
-  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,27 +12,6 @@ const HeroSection = () => {
     }, 5000);
     return () => clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    if (timeLeft <= 0) return;
-    
-    const interval = setInterval(() => {
-      setTimeLeft(prev => {
-        const newTime = Math.max(0, prev - 1000);
-        return newTime;
-      });
-    }, 1000);
-    
-    return () => clearInterval(interval);
-  }, [timeLeft]);
-
-  const formatTime = (ms: number) => {
-    const totalSeconds = Math.floor(ms / 1000);
-    const hours = Math.floor(totalSeconds / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
-    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-  };
   return <section className="relative overflow-hidden gradient-warm py-8 sm:py-12 lg:py-20">
       {/* Decorative elements */}
       <div className="absolute top-10 left-10 w-20 h-20 rounded-full bg-secondary/30 blur-2xl hidden sm:block" />
@@ -105,10 +70,7 @@ const HeroSection = () => {
             {/* Header de urgência - fixo no topo */}
             {showBadge && (
               <div className="fixed top-0 left-0 right-0 z-50 bg-accent text-accent-foreground font-bold text-sm sm:text-base py-2 sm:py-3 text-center shadow-lg animate-fade-in">
-                <span className="mr-2 sm:mr-4">🔥 ÚLTIMAS 7 VAGAS COM 79% OFF 🔥</span>
-                <span className="inline-flex items-center gap-1 bg-background/20 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-mono">
-                  ⏰ {formatTime(timeLeft)}
-                </span>
+                🔥 ÚLTIMAS 7 VAGAS COM 79% OFF 🔥
               </div>
             )}
           </div>
