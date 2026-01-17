@@ -59,9 +59,9 @@ const HeroSection = () => {
               <img src={mockupKit} alt="Kit Bíblico Jesus Goods - Mockup com todos os materiais" className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
             </div>
             {/* Header de urgência - fixo no topo */}
-            <div className="fixed top-0 left-0 right-0 z-50 bg-accent text-accent-foreground font-bold text-sm sm:text-base py-2 sm:py-3 text-center shadow-lg">
+            <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="fixed top-0 left-0 right-0 z-50 bg-accent text-accent-foreground font-bold text-sm sm:text-base py-2 sm:py-3 text-center shadow-lg hover:opacity-90 transition-opacity cursor-pointer block">
               🔥 ÚLTIMAS 7 VAGAS COM 79% OFF 🔥
-            </div>
+            </a>
           </div>
         </div>
       </div>
