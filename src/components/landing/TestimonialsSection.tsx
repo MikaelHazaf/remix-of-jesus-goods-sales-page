@@ -1,32 +1,36 @@
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import testimonial1 from "@/assets/testimonial-1.jpg";
+import testimonial2 from "@/assets/testimonial-2.png";
+import testimonial3 from "@/assets/testimonial-3.png";
+import testimonial4 from "@/assets/testimonial-4.png";
 
 const testimonials = [
   {
     name: "Ana Paula S.",
     location: "São Paulo, SP",
-    avatar: "👩‍👧",
+    avatar: testimonial1,
     rating: 5,
     text: "Minha filha de 5 anos ama as atividades! Ela pede todo dia para fazer 'o livro da Bíblia'. É lindo ver ela aprendendo sobre Deus de forma tão natural e divertida.",
   },
   {
     name: "Carla Mendes",
     location: "Belo Horizonte, MG",
-    avatar: "👩‍👦‍👦",
+    avatar: testimonial2,
     rating: 5,
     text: "Comprei para usar na escolinha dominical e foi um sucesso! As crianças ficam super engajadas. O material é muito bem feito e as ilustrações são lindas.",
   },
   {
     name: "Fernanda Costa",
     location: "Curitiba, PR",
-    avatar: "👩‍👧‍👦",
+    avatar: testimonial3,
     rating: 5,
     text: "Melhor investimento que fiz! Tenho 3 filhos de idades diferentes e todos conseguem aproveitar o material. Super recomendo para todas as mães cristãs!",
   },
   {
     name: "Priscila Oliveira",
     location: "Recife, PE",
-    avatar: "👩",
+    avatar: testimonial4,
     rating: 5,
     text: "O download foi super rápido e o material é excelente! Já imprimi várias vezes e meu filho leva para a escola. Valeu muito a pena!",
   }
@@ -67,8 +71,13 @@ const TestimonialsSection = () => {
                 </div>
 
                 <div className="flex items-center gap-2 sm:gap-3 mt-4 sm:mt-6 pt-3 sm:pt-4 border-t">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-muted flex items-center justify-center text-xl sm:text-2xl">
-                    {testimonial.avatar}
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0">
+                    <img 
+                      src={testimonial.avatar} 
+                      alt={`Foto de ${testimonial.name}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
                   <div>
                     <p className="font-bold text-sm sm:text-base">{testimonial.name}</p>
