@@ -34,45 +34,45 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-16 lg:py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <span className="inline-block bg-secondary text-secondary-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4">
+    <section className="py-12 sm:py-16 lg:py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <span className="inline-block bg-secondary text-secondary-foreground px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
             💬 Depoimentos Reais
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 px-2">
             O Que as <span className="text-primary">Mamães</span> Estão Dizendo
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto px-2">
             Milhares de famílias já transformaram o momento de ensino bíblico 
             com o Kit Jesus Goods.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="bg-card hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-1 mb-4">
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-center gap-0.5 sm:gap-1 mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
+                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-secondary text-secondary" />
                   ))}
                 </div>
                 
-                <div className="relative mb-4">
-                  <Quote className="absolute -top-2 -left-2 w-8 h-8 text-primary/20" />
-                  <p className="text-muted-foreground italic pl-6">
+                <div className="relative mb-3 sm:mb-4">
+                  <Quote className="absolute -top-2 -left-1 sm:-left-2 w-6 h-6 sm:w-8 sm:h-8 text-primary/20" />
+                  <p className="text-muted-foreground italic text-xs sm:text-sm pl-5 sm:pl-6">
                     "{testimonial.text}"
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3 mt-6 pt-4 border-t">
-                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-2xl">
+                <div className="flex items-center gap-2 sm:gap-3 mt-4 sm:mt-6 pt-3 sm:pt-4 border-t">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-muted flex items-center justify-center text-xl sm:text-2xl">
                     {testimonial.avatar}
                   </div>
                   <div>
-                    <p className="font-bold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                    <p className="font-bold text-sm sm:text-base">{testimonial.name}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.location}</p>
                   </div>
                 </div>
               </CardContent>
