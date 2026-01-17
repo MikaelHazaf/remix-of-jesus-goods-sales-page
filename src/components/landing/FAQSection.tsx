@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Para qual faixa etária é indicado?",
-    answer: "O kit foi desenvolvido para crianças de 3 a 10 anos. Temos atividades de diferentes níveis de complexidade, desde colorir para os mais novos até caça-palavras e leitura para os maiores."
+    answer: "O kit foi desenvolvido para crianças de 3 a 12 anos. Temos atividades de diferentes níveis de complexidade, desde colorir para os mais novos até caça-palavras e leitura para os maiores."
   },
   {
     question: "O pagamento é seguro?",
