@@ -1,8 +1,17 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
 import mockupKit from "@/assets/mockup-kit.png";
 const CHECKOUT_URL = "https://pay.cakto.com.br/jdf8uyq_413393";
 const HeroSection = () => {
+  const [showBadge, setShowBadge] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBadge(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
   return <section className="relative overflow-hidden gradient-warm py-8 sm:py-12 lg:py-20">
       {/* Decorative elements */}
       <div className="absolute top-10 left-10 w-20 h-20 rounded-full bg-secondary/30 blur-2xl hidden sm:block" />
@@ -58,10 +67,12 @@ const HeroSection = () => {
             <div className="relative z-10">
               <img src={mockupKit} alt="Kit Bíblico Jesus Goods - Mockup com todos os materiais" className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
             </div>
-            {/* Badge de desconto */}
-            <div className="absolute -top-2 left-1/2 -translate-x-1/2 sm:top-0 sm:left-auto sm:translate-x-0 sm:-right-4 lg:right-0 z-20 bg-accent text-accent-foreground font-bold text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg animate-bounce">
-              -79% OFF
-            </div>
+            {/* Badge de desconto - fixo na tela */}
+            {showBadge && (
+              <div className="fixed top-1/3 right-4 z-50 bg-accent text-accent-foreground font-bold text-sm sm:text-base px-4 sm:px-5 py-2 sm:py-3 rounded-full shadow-xl animate-fade-in cursor-pointer hover:scale-110 transition-transform">
+                -79% OFF
+              </div>
+            )}
           </div>
         </div>
       </div>
