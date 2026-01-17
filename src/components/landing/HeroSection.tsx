@@ -67,10 +67,10 @@ const HeroSection = () => {
             <div className="relative z-10">
               <img src={mockupKit} alt="Kit Bíblico Jesus Goods - Mockup com todos os materiais" className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
             </div>
-            {/* Badge de desconto - fixo na tela */}
+            {/* Header de urgência - fixo no topo */}
             {showBadge && (
-              <div className="fixed top-1/3 right-4 z-50 bg-accent text-accent-foreground font-bold text-sm sm:text-base px-4 sm:px-5 py-2 sm:py-3 rounded-full shadow-xl animate-fade-in cursor-pointer hover:scale-110 transition-transform">
-                -79% OFF
+              <div className="fixed top-0 left-0 right-0 z-50 bg-accent text-accent-foreground font-bold text-sm sm:text-base py-2 sm:py-3 text-center shadow-lg animate-fade-in">
+                🔥 ÚLTIMAS 7 VAGAS COM 79% OFF 🔥
               </div>
             )}
           </div>
