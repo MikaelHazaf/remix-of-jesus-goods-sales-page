@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
-import mockupKit from "@/assets/mockup-kit.png";
+import mockupKit from "@/assets/mockup-kit.webp";
 const CHECKOUT_URL = "https://pay.cakto.com.br/jdf8uyq_413393";
 const HeroSection = () => {
   return <section className="relative overflow-hidden gradient-warm py-8 sm:py-12 lg:py-20">

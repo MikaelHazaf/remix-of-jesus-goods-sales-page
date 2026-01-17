@@ -1,10 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Palette, Puzzle, Cross, Sparkles } from "lucide-react";
-import aprendendo from "@/assets/aprendendo-a-orar.png";
+import aprendendo from "@/assets/aprendendo-a-orar.webp";
 import colorindo from "@/assets/colorindo-com-proposito.webp";
 import atividades from "@/assets/atividades-abc-biblicas.webp";
-import antigo from "@/assets/antigo-testamento.png";
-import passatempo from "@/assets/passatempo-biblico.png";
+import antigo from "@/assets/antigo-testamento.webp";
+import passatempo from "@/assets/passatempo-biblico.webp";
 
 const materials = [
   {
