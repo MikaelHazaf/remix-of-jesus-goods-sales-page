@@ -72,7 +72,7 @@ const HeroSection = () => {
               />
             </div>
             {/* Badge de desconto */}
-            <div className="absolute top-0 right-4 sm:-top-4 sm:-right-4 lg:top-0 lg:right-0 bg-accent text-accent-foreground font-bold text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg animate-bounce">
+            <div className="absolute -top-2 left-1/2 -translate-x-1/2 sm:top-0 sm:left-auto sm:translate-x-0 sm:-right-4 lg:right-0 z-20 bg-accent text-accent-foreground font-bold text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg animate-bounce">
               -79% OFF
             </div>
           </div>
