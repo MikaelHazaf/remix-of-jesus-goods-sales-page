@@ -26,7 +26,7 @@ const benefits = [
   {
     icon: <Users className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "Para Diferentes Idades",
-    description: "Atividades adaptadas para crianças de 3 a 10 anos, toda a família aproveita!"
+    description: "Atividades adaptadas para crianças de 3 a 12 anos, toda a família aproveita!"
   },
   {
     icon: <Shield className="w-6 h-6 sm:w-8 sm:h-8" />,
