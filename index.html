@@ -12,6 +12,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://pay.cakto.com.br" />
+    <link rel="dns-prefetch" href="https://cdn.utmify.com.br" />
+    <link rel="dns-prefetch" href="https://tracking.utmify.com.br" />
+
+    <!-- Preload critical font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" /></noscript>
 
     <meta property="og:title" content="Kit Bíblico Infantil - Jesus Goods" />
     <meta property="og:description" content="Kit Bíblico Infantil com +500 páginas de atividades para crianças de 3 a 12 anos." />
@@ -22,7 +28,7 @@
     <meta name="twitter:site" content="@JesusGoods" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- UTMify -->
+    <!-- UTMify - loaded async to not block rendering -->
     <script
       src="https://cdn.utmify.com.br/scripts/utms/latest.js"
       data-utmify-prevent-xcod-sck
@@ -31,14 +37,16 @@
       defer
     ></script>
 
-    <!-- UTMify Pixel -->
+    <!-- UTMify Pixel - deferred -->
     <script>
       window.pixelId = "696c384fdc8d02883d1e09d8";
-      var a = document.createElement("script");
-      a.setAttribute("async", "");
-      a.setAttribute("defer", "");
-      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-      document.head.appendChild(a);
+      window.addEventListener('load', function() {
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+      });
     </script>
   </head>
 

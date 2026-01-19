@@ -107,6 +107,13 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: 'Nunito', 'Segoe UI', sans-serif;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Optimize images */
+  img {
+    content-visibility: auto;
   }
 }
 
